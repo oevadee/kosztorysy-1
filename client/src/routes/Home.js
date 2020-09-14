@@ -2,6 +2,9 @@ import React from "react";
 
 import '../styles/Home.scss';
 
+// Components
+import Button from '../components/Button';
+
 const Home = () => {
   return (
     <div className="introContainer">
@@ -9,7 +12,7 @@ const Home = () => {
       <p className="introContainer__description">Zatrudniamy i współpracujemy ze specjalistami <br /> z wieloletnim doświadczeniem.</p>
       <img className="introContainer__image" src="/img/intro.jpg" alt="" />
       <div className="introContainer__imageCover"></div>
-      <button className="introContainer__button">Zobacz projekty</button>
+      <Button />
     </div>
   );
 };

@@ -1,0 +1,12 @@
+@import '../App.scss';
+
+.button{
+  font-size: $font-s;
+  font-weight: 500;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 2px 0 rgba($color: #333, $alpha: 0.25);
+  outline: none;
+}
