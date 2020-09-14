@@ -12,7 +12,7 @@ const Home = () => {
       <p className="introContainer__description">Zatrudniamy i współpracujemy ze specjalistami <br /> z wieloletnim doświadczeniem.</p>
       <img className="introContainer__image" src="/img/intro.jpg" alt="" />
       <div className="introContainer__imageCover"></div>
-      <Button />
+      <Button text="Zobacz projekty" type="primary"/>
     </div>
   );
 };
