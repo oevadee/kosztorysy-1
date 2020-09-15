@@ -1,18 +1,23 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "./Card.scss";
 
-const Card = ({ title, header, description, imageHeight, imageWidth }) => {
+const Card = ({ title, header, description, imageHeight, imageWidth, descriptionWidth = '100%', src }) => {
   return (
     <div className="card">
-      <img
-        src="/img/gallery1.jpg"
-        alt="image"
-        className="card__img"
-        style={{ height: imageHeight, width: imageWidth }}
-      />
+      <Link to="/gallery/preview">
+        <img
+          src={src}
+          alt="image"
+          className="card__img"
+          style={{ height: imageHeight, width: imageWidth }}
+        />
+      </Link>
       <h3 className="card__title">{title}</h3>
-      <h2 className="card__header">{header}</h2>
-      <p className="card__description">{description}</p>
+      <Link to="gallery/preview">
+        <h2 className="card__header">{header}</h2>
+      </Link>
+      <p className="card__description" style={{width: descriptionWidth}}>{description}</p>
     </div>
   );
 };

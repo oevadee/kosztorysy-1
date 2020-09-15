@@ -1,56 +1,52 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "../styles/GalleryPreview.scss";
 
+import { gallery1 } from "../context/imageProvider";
+
 // Icons
-import ArrowForward from '@material-ui/icons/ArrowForwardIosOutlined';
-import ArrowBack from '@material-ui/icons/ArrowBackIosOutlined';
-import Close from '@material-ui/icons/CloseOutlined';
+import ArrowForward from "@material-ui/icons/ArrowForwardIosOutlined";
+import ArrowBack from "@material-ui/icons/ArrowBackIosOutlined";
+import Close from "@material-ui/icons/CloseOutlined";
 
 const GalleryPreview = ({ src }) => {
   const [translationX, setTranslationX] = useState(0);
-  let images = [
-    '/img/house1.jpg',  
-    '/img/house2.jpg',  
-    '/img/house3.jpg',  
-    '/img/house4.jpg',  
-    '/img/house5.jpg',  
-  ];
 
   const goLeft = () => {
     setTranslationX(translationX + 100);
-    if (translationX === 0) setTranslationX(translationX - ((images.length - 1) * 100))
+    if (translationX === 0)
+      setTranslationX(translationX - (gallery1.images.length - 1) * 100);
     console.log(translationX);
   };
 
   const goRight = () => {
     setTranslationX(translationX - 100);
-    if (translationX === -((images.length - 1) * 100)) setTranslationX(0)
+    if (translationX === -((gallery1.images.length - 1) * 100)) setTranslationX(0);
     console.log(translationX);
   };
 
   return (
     <div className="previewContainer">
       <div className="previewContainer__slider">
-        {images.map(src => (
+        {gallery1.images.map((src) => (
           <img
             src={src}
             className="previewContainer__slider__img"
             style={{ transform: `translateX(${translationX}%)` }}
           />
         ))}
-        <button className="previewContainer__arrow arrow-left" onClick={goLeft}>
-          <ArrowBack className="previewContainer__arrow__icon" />
+        <button className="previewContainer__skipPanel skipPanel-left" onClick={goLeft}>
+          <ArrowBack className="previewContainer__skipPanel__icon" />
         </button>
         <button
-          className="previewContainer__arrow arrow-right"
+          className="previewContainer__skipPanel skipPanel-right"
           onClick={goRight}
         >
-          <ArrowForward className="previewContainer__arrow__icon" />
+          <ArrowForward className="previewContainer__skipPanel__icon" />
         </button>
       </div>
       <div className="previewContainer__miniatures">
-        {images.map(src => (
+        {gallery1.images.map((src) => (
           <img src={src} className="previewContainer__miniatures__miniature" />
         ))}
       </div>

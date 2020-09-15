@@ -2,12 +2,18 @@
 
 .card{
   width: 380px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .card__img{
-  border-radius: 5px;
+  border-radius: $b-radius;
   margin-bottom: 15px;
+  opacity: 0.9;
+  transition: 0.2s ease-in;
+  object-fit: cover;
+    &:hover{
+      opacity: 1;
+    }
 }
 
 .card__title{
@@ -24,6 +30,12 @@
   font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 5px;
+  color: $color-black;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+    &:hover{
+      color: $color-brown;
+    }
 }
 
 .card__description{
@@ -31,4 +43,5 @@
   font-size: $font-xs;
   color: $color-muted-text;
   line-height: 22px;
+  width: 75%;
 }

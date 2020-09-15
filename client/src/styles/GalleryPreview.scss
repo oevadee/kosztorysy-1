@@ -13,7 +13,7 @@
 .previewContainer__slider {
   width: 1000px;
   height: 550px;
-  border-radius: 5px;
+  border-radius: $b-radius;
   display: flex;
   align-items: center;
   position: relative;
@@ -28,7 +28,7 @@
   transition: 0.5s ease-in;
 }
 
-.previewContainer__arrow {
+.previewContainer__skipPanel {
   position: absolute;
   width: 80px;
   height: 100%;
@@ -42,15 +42,15 @@
   }
 }
 
-.arrow-left {
+.skipPanel-left {
   left: 0;
 }
 
-.arrow-right {
+.skipPanel-right {
   right: 0;
 }
 
-.previewContainer__arrow__icon {
+.previewContainer__skipPanel__icon {
   width: 30px !important;
   height: 30px !important;
   color: $color-white;
