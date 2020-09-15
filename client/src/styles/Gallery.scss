@@ -1,0 +1,24 @@
+@import './variables';
+
+.galleryContainer{
+  height: calc(100vh - 100px);
+  width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% + 50px));
+  display: flex;
+  justify-content: space-between;
+}
+
+.galleryContainer__right{
+  padding: 40px;
+}
+
+.galleryContainer__header{
+  font-family: $font-mont;
+  font-size: $font-l;
+  font-weight: 500;
+  color: $color-black;
+  margin-bottom: 80px;
+}

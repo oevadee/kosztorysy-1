@@ -37,7 +37,8 @@ const Contact = () => {
 
             <label>Wiadomość</label>
             <Field name={"message"} type="text" />
-            
+
+            <button type="submit">Wyślij</button>
           </form>
         )}
 

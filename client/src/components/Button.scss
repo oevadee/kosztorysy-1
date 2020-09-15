@@ -1,12 +1,30 @@
-@import '../App.scss';
+@import '../styles/variables';
 
-.button{
+.btn{
   font-size: $font-s;
+  font-family: $font-mont;
   font-weight: 500;
   padding: 15px 25px;
   text-transform: uppercase;
   border-radius: 5px;
-  border: none;
   box-shadow: 2px 2px 2px 0 rgba($color: #333, $alpha: 0.25);
   outline: none;
+}
+
+.btn-primary{
+  background: $color-white;
+  border: none;
+  color: $color-black;
+}
+
+.btn-secondary{
+  background: none;
+  border: 3px solid $color-brown;
+  color: $color-brown;
+}
+
+.btn-secondary-full{
+  background: $color-brown;
+  border: none;
+  color: $color-white;
 }
