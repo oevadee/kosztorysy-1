@@ -1,0 +1,73 @@
+@import '../styles/variables';
+
+.previewContainer {
+  width: 100vw;
+  height: 100vh;
+  background: $color-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.previewContainer__slider {
+  width: 1000px;
+  height: 550px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.previewContainer__slider__img {
+  height: 100%;
+  min-width: 100%;
+  display: inline-block;
+  transition: 0.5s ease-in;
+}
+
+.previewContainer__arrow {
+  position: absolute;
+  width: 80px;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+
+  &:hover {
+    background: $color-grey;
+    transition: 0.5s;
+  }
+}
+
+.arrow-left {
+  left: 0;
+}
+
+.arrow-right {
+  right: 0;
+}
+
+.previewContainer__arrow__icon {
+  width: 30px !important;
+  height: 30px !important;
+  color: $color-white;
+}
+
+.previewContainer__close__icon{
+  width: 30px !important;
+  height: 30px !important;
+  color: $color-white;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.previewContainer__miniatures__miniature{
+  width: 60px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 3px;
+}
