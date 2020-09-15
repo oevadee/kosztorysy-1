@@ -15,6 +15,7 @@ function App() {
   return (<>
       <Router>
         {/* Trzeba się zastanowić co zrobić z navem, ponieważ zawsze jest nad elementami co psuje GalleryPreview */}
+
         <Switch>
           <Route exact path="/">
             <Home />
