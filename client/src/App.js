@@ -19,7 +19,7 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <Navbar imageType='/img/logo-light' textColor="#fff"/>
+            <Navbar imageType='/img/logo-light.png' textColor="#fff"/>
             <Home />
           </Route>
           <Route exact path="/offer">

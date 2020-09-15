@@ -5,9 +5,11 @@ import '../styles/Home.scss';
 
 // Components
 import Button from '../components/Button';
+import IconSection from '../components/IconSection';
 
 const Home = () => {
   return (
+    <>
     <div className="introContainer">
       <h1 className="introContainer__header">Intro text</h1>
       <p className="introContainer__description">Zatrudniamy i współpracujemy ze specjalistami <br /> z wieloletnim doświadczeniem.</p>
@@ -17,6 +19,8 @@ const Home = () => {
         <Button text="Zobacz projekty" type="primary"/>
       </Link>
     </div>
+    <IconSection />
+    </>
   );
 };
 

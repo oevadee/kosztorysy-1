@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import "./Navbar.scss";
+import "./styles/Navbar.scss";
 
 const Navbar = ({ imageType = '/img/logo-dark.png', textColor = '#333' }) => {
   return (

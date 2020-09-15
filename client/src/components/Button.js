@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './Button.scss';
+import './styles/Button.scss';
 
 const Button = ({ text, type }) => {
   if (type === 'primary') return <button className="btn btn-primary">{text}</button>

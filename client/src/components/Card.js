@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import "./Card.scss";
+import "./styles/Card.scss";
 
 const Card = ({ title, header, description, imageHeight, imageWidth, descriptionWidth = '100%', src }) => {
   return (
