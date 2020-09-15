@@ -1,16 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Field } from "formik";
+import axios from "axios";
 
 // Components
 import Button from '../components/Button';
+import Alert from "../components/Alert";
 
 const Contact = () => {
 
+  const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+  const [err, setErr] = useState((<></>))
+
   const handleSubmit = (values) => {
-    console.log(values);
+    if (values.firstName.length <= 2) {
+      setErr((<Alert text="Imię jest za krótkie" />))
+    } else if (values.lastName.length <= 2) {
+      setErr((<Alert text="Nazwisko jest za krótkie" />))
+    } else if (!values.email.toLowerCase().match(emailPattern)) {
+      setErr((<Alert text="Email jest niepoprawny" />))
+    } else if (values.message.length <= 10) {
+      setErr((<Alert text="Wiadomość jest za krótka" />))
+    } else {
+      setErr((<Alert text="Wysłano!" />))
+      setTimeout(() => {
+        setErr((<></>))
+      }, 3000);
+
+      axios.post("/sendForm", values)
+        .then(res => console.log("success"))
+        .catch(err => console.log(err))
+        
+    };
   };
 
-  return (<>
+  return (
+
+    <div style={{marginTop: '200px'}}>
     <h1>Kontakt</h1>
     <Formik
       initialValues={{
@@ -33,7 +59,7 @@ const Contact = () => {
             <Field name={"email"} type="text" />
 
             <label>Numer telefonu</label>
-            <Field name={"email"} type="text" />
+            <Field name={"phone"} type="text" />
 
             <label>Wiadomość</label>
             <Field name={"message"} type="text" />
@@ -41,10 +67,12 @@ const Contact = () => {
             <button type="submit">Wyślij</button>
           </form>
         )}
-
-
     </Formik>
-    </>
+          <br />
+          <br />
+          {err}
+    </div>
+
   );
 };
 
