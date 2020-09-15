@@ -5,10 +5,8 @@ import React from "react";
 import Button from '../components/Button';
 
 const Contact = () => {
-  return (<>
+  return (
     <h1>Kontakt</h1>
-    <Button />
-    </>
   );
 };
 

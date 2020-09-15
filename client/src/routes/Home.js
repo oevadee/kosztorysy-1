@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 import '../styles/Home.scss';
 
@@ -12,7 +13,9 @@ const Home = () => {
       <p className="introContainer__description">Zatrudniamy i współpracujemy ze specjalistami <br /> z wieloletnim doświadczeniem.</p>
       <img className="introContainer__image" src="/img/intro.jpg" alt="" />
       <div className="introContainer__imageCover"></div>
-      <Button text="Zobacz projekty" type="primary"/>
+      <Link to='/gallery'>
+        <Button text="Zobacz projekty" type="primary"/>
+      </Link>
     </div>
   );
 };

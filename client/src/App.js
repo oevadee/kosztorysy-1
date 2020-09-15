@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.scss';
+import './styles/App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
 
 // Routes
@@ -10,6 +10,7 @@ import Gallery from './routes/Gallery';
 
 // Components
 import GalleryPreview from './routes/GalleryPreview'
+import Navbar from './components/Navbar';
 
 function App() {
   return (<>
@@ -18,18 +19,22 @@ function App() {
 
         <Switch>
           <Route exact path="/">
+            <Navbar imageType='/img/logo-light.png' textColor="#fff"/>
             <Home />
           </Route>
-          <Route exact path="/pffer">
+          <Route exact path="/offer">
+            <Navbar />
             <Offer />
           </Route>
           <Route exact path="/gallery">
+            <Navbar />
             <Gallery />
           </Route>
           <Route exact path="/gallery/preview">
             <GalleryPreview />
           </Route>
           <Route exact path="/contact">
+            <Navbar />
             <Contact />
           </Route>
         </Switch>
