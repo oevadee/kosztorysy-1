@@ -1,10 +1,10 @@
 export const gallery1 = {
   intro: "/img/house1.jpg",
   images: [
-    "/img/house1.jpg",
-    "/img/house2.jpg",
-    "/img/house3.jpg",
-    "/img/house4.jpg",
-    "/img/house5.jpg",
+    {index: 0, src: "/img/house1.jpg"},
+    {index: 1, src: "/img/house2.jpg"},
+    {index: 2, src: "/img/house3.jpg"},
+    {index: 3, src: "/img/house4.jpg"},
+    {index: 4, src: "/img/house5.jpg"},
   ],
 };

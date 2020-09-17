@@ -69,8 +69,8 @@
   height: 40px;
   margin: 5px;
   border-radius: 3px;
-  opacity: 0.5;
   transition: $transision-snap;
+  opacity: 0.3;
   cursor: pointer;
     &:hover{
       opacity: 1;
