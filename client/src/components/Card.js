@@ -8,7 +8,7 @@ const Card = ({ title, header, description, imageHeight, imageWidth, description
       <Link to="/gallery/preview">
         <img
           src={src}
-          alt="image"
+          alt=""
           className="card__img"
           style={{ height: imageHeight, width: imageWidth }}
         />

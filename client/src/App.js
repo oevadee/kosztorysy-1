@@ -11,6 +11,7 @@ import Gallery from './routes/Gallery';
 // Components
 import GalleryPreview from './routes/GalleryPreview'
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (<>
@@ -38,6 +39,7 @@ function App() {
             <Contact />
           </Route>
         </Switch>
+        <Footer />
       </Router>
       </>
   );

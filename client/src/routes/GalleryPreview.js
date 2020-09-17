@@ -13,17 +13,20 @@ const GalleryPreview = ({ src }) => {
   const [translationX, setTranslationX] = useState(0);
 
   const goLeft = () => {
-    setTranslationX(translationX + 100);
-    if (translationX === 0)
-      setTranslationX(translationX - (gallery1.images.length - 1) * 100);
+    translationX === 0 ? setTranslationX(translationX - (gallery1.images.length - 1) * 100) : setTranslationX(translationX + 100);
     console.log(translationX);
   };
 
   const goRight = () => {
     setTranslationX(translationX - 100);
-    if (translationX === -((gallery1.images.length - 1) * 100)) setTranslationX(0);
+    if (translationX === -((gallery1.images.length - 1) * 100))
+      setTranslationX(0);
     console.log(translationX);
   };
+
+  const goMiniature = (image) => {
+    setTranslationX(-((gallery1.images.indexOf(image)) * 100))
+  }
 
   return (
     <div className="previewContainer">
@@ -31,11 +34,15 @@ const GalleryPreview = ({ src }) => {
         {gallery1.images.map((src) => (
           <img
             src={src}
+            alt=""
             className="previewContainer__slider__img"
             style={{ transform: `translateX(${translationX}%)` }}
           />
         ))}
-        <button className="previewContainer__skipPanel skipPanel-left" onClick={goLeft}>
+        <button
+          className="previewContainer__skipPanel skipPanel-left"
+          onClick={goLeft}
+        >
           <ArrowBack className="previewContainer__skipPanel__icon" />
         </button>
         <button
@@ -46,8 +53,13 @@ const GalleryPreview = ({ src }) => {
         </button>
       </div>
       <div className="previewContainer__miniatures">
-        {gallery1.images.map((src) => (
-          <img src={src} className="previewContainer__miniatures__miniature" />
+        {gallery1.images.map(image => (
+          <img
+            src={image}
+            alt=""
+            className="previewContainer__miniatures__miniature"
+            onClick={() => goMiniature(image)}
+          />
         ))}
       </div>
       <Link to="/gallery">

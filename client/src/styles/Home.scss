@@ -1,7 +1,7 @@
 @import './variables';
 
-.introContainer{
-  width: 100vw;
+.introContainer {
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,12 +12,12 @@
   font-family: $font-mont;
 }
 
-.introContainer__header{
+.introContainer__header {
   font-size: $font-xl;
   font-weight: 600;
 }
 
-.introContainer__description{
+.introContainer__description {
   font-family: $font-lato;
   font-size: $font-m;
   font-weight: 400;
@@ -25,7 +25,7 @@
   margin-bottom: 40px;
 }
 
-.introContainer__image{
+.introContainer__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -35,7 +35,7 @@
   z-index: -2;
 }
 
-.introContainer__imageCover{
+.introContainer__imageCover {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -44,4 +44,50 @@
   opacity: 0.6;
   background: $color-black;
   z-index: -1;
+}
+
+.secondContainer {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px;
+}
+
+.secondContainer__section {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parallaxImageContainer {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.parallaxImageContainer__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.parallaxImageContainer__cover {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: $color-shade-light;
+  position: absolute;
+}
+
+.thirdContainer{
+  width: 100%;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

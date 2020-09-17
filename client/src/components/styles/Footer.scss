@@ -1,0 +1,44 @@
+@import '../../styles/variables';
+
+.footer{
+  width: 100%;
+  height: 100px;
+  background-color: $color-brown;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $font-mont;
+  color: $color-white;
+  font-size: $font-s;
+}
+
+.footer__contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  padding-left: 40px;
+  font-weight: 500;
+}
+
+.footer__contact span{
+  font-weight: 600;
+}
+
+.footer__privacy{
+  flex: 1;
+  text-align: center;
+}
+
+.footer__socials{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.footer__socials__icon{
+  width: 25px;
+  height: 25px;
+  margin: 0 20px;
+}

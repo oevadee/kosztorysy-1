@@ -1,0 +1,43 @@
+@import '../../styles/variables';
+
+.iconSection {
+  height: 435px;
+  width: 475px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconSection__icon {
+  width: 90px !important;
+  height: 95px !important;
+  color: $color-brown;
+  margin-bottom: 35px;
+}
+
+.iconSection__header {
+  font-size: $font-m;
+  font-weight: 600;
+  font-family: $font-mont;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.iconSection__list__item {
+  font-family: $font-lato;
+  text-align: center;
+  margin-bottom: 20px;
+  list-style: none;
+  line-height: 24px;
+  position: relative;
+    &::before{
+      content: '';
+      display: inline-block;
+      position: relative;
+      right: 10px;
+      height: 15px;
+      width: 15px;
+      background-image: url('/icons/tick.svg');
+    }
+}
