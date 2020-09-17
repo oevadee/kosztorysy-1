@@ -13,7 +13,9 @@ const GalleryPreview = ({ src }) => {
   const [translationX, setTranslationX] = useState(0);
 
   const goLeft = () => {
-    translationX === 0 ? setTranslationX(translationX - (gallery1.images.length - 1) * 100) : setTranslationX(translationX + 100);
+    translationX === 0
+      ? setTranslationX(translationX - (gallery1.images.length - 1) * 100)
+      : setTranslationX(translationX + 100);
     console.log(translationX);
   };
 
@@ -25,15 +27,17 @@ const GalleryPreview = ({ src }) => {
   };
 
   const goMiniature = (image) => {
-    setTranslationX(-((gallery1.images.indexOf(image)) * 100))
-  }
+    setTranslationX(-(gallery1.images.indexOf(image) * 100));
+    console.log(image);
+  };
 
   return (
     <div className="previewContainer">
       <div className="previewContainer__slider">
-        {gallery1.images.map((src) => (
+        {gallery1.images.map((image) => (
           <img
-            src={src}
+            key={image}
+            src={image}
             alt=""
             className="previewContainer__slider__img"
             style={{ transform: `translateX(${translationX}%)` }}
@@ -53,8 +57,9 @@ const GalleryPreview = ({ src }) => {
         </button>
       </div>
       <div className="previewContainer__miniatures">
-        {gallery1.images.map(image => (
+        {gallery1.images.map((image) => (
           <img
+            key={image}
             src={image}
             alt=""
             className="previewContainer__miniatures__miniature"

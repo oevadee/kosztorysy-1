@@ -35,10 +35,9 @@
   background: none;
   border: none;
   outline: none;
-
+  transition: $transision-snap;
   &:hover {
     background: $color-grey;
-    transition: 0.5s;
   }
 }
 
@@ -70,4 +69,10 @@
   height: 40px;
   margin: 5px;
   border-radius: 3px;
+  opacity: 0.5;
+  transition: $transision-snap;
+  cursor: pointer;
+    &:hover{
+      opacity: 1;
+    }
 }
