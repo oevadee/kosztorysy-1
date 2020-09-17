@@ -6,7 +6,17 @@ import Button from "../components/Button";
 import Card from "../components/Card";
 
 // Images
-import { gallery1 } from '../context/imageProvider';
+import { galleries, galleriesArr } from '../context/imageProvider';
+
+const manageGalleries = () => {
+  for (let i = 0; i < galleriesArr.length; i++) {
+    if (galleriesArr[i] % 3) {
+      console.log(galleriesArr[i]);
+    }
+  }
+}
+
+manageGalleries();
 
 const Gallery = () => {
   return (
@@ -20,7 +30,7 @@ const Gallery = () => {
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue a rutrum vestibulum, ligula turpis dignissim risus, in mollis libero ex ac sapien."
             imageHeight="320px"
             imageWidth="320px"
-            src={gallery1.intro}
+            src={galleries.gallery1.intro}
           />
           <Button text="zobacz więcej" type="secondary-full" />
         </div>

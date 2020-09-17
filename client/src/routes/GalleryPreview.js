@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/GalleryPreview.scss";
 
-import { gallery1 } from "../context/imageProvider";
+import { galleries } from "../context/imageProvider";
 
 // Icons
 import ArrowForward from "@material-ui/icons/ArrowForwardIosOutlined";
@@ -18,9 +18,9 @@ const GalleryPreview = () => {
 
   const goLeft = () => {
     if (translationX === 0) {
-      setTranslationX(translationX - (gallery1.images.length - 1) * 100);
+      setTranslationX(translationX - (galleries.gallery1.images.length - 1) * 100);
       setPreviousIndex(activeIndex)
-      setActiveIndex(gallery1.images.length - 1);
+      setActiveIndex(galleries.gallery1.images.length - 1);
     } else {
       setTranslationX(translationX + 100);
       setPreviousIndex(activeIndex)
@@ -29,7 +29,7 @@ const GalleryPreview = () => {
   };
 
   const goRight = () => {
-    if (translationX === -((gallery1.images.length - 1) * 100)) {
+    if (translationX === -((galleries.gallery1.images.length - 1) * 100)) {
       setTranslationX(0);
       setPreviousIndex(activeIndex)
       setActiveIndex(0);
@@ -56,7 +56,7 @@ const GalleryPreview = () => {
   return (
     <div className="previewContainer">
       <div className="previewContainer__slider">
-        {gallery1.images.map(({ index, src }) => (
+        {galleries.gallery1.images.map(({ index, src }) => (
           <img
             key={index}
             src={src}
@@ -79,7 +79,7 @@ const GalleryPreview = () => {
         </button>
       </div>
       <div className="previewContainer__miniatures" ref={miniatures}>
-        {gallery1.images.map(({ index, src }) => (
+        {galleries.gallery1.images.map(({ index, src }) => (
           <img
             key={index}
             src={src}
