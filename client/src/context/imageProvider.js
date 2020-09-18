@@ -17,7 +17,7 @@ export const galleries = {
       {index: 2, src: "/img/gallery3.jpg"},
     ],
   },
-}
+};
 
 export const galleriesArr = [
   'gallery1',
@@ -26,4 +26,4 @@ export const galleriesArr = [
   'gallery4',
   'gallery5',
   'gallery6',
-]
+];

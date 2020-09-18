@@ -1,26 +1,31 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../styles/GalleryPreview.scss";
-
-import { galleries } from "../context/imageProvider";
+import Axios from "axios";
 
 // Icons
 import ArrowForward from "@material-ui/icons/ArrowForwardIosOutlined";
 import ArrowBack from "@material-ui/icons/ArrowBackIosOutlined";
 import Close from "@material-ui/icons/CloseOutlined";
 
+
 const GalleryPreview = () => {
   const [translationX, setTranslationX] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const [previousIndex, setPreviousIndex] = useState(null);
+  const [gallery, setGallery] = useState([]);
+  const { id } = useParams();
+  const [loading, setLoading] = useState(true);
 
   const miniatures = useRef(null);
 
+  //galleries.gallery1.images
+
   const goLeft = () => {
     if (translationX === 0) {
-      setTranslationX(translationX - (galleries.gallery1.images.length - 1) * 100);
+      setTranslationX(translationX - (gallery.length - 1) * 100);
       setPreviousIndex(activeIndex)
-      setActiveIndex(galleries.gallery1.images.length - 1);
+      setActiveIndex(gallery.length - 1);
     } else {
       setTranslationX(translationX + 100);
       setPreviousIndex(activeIndex)
@@ -29,7 +34,7 @@ const GalleryPreview = () => {
   };
 
   const goRight = () => {
-    if (translationX === -((galleries.gallery1.images.length - 1) * 100)) {
+    if (translationX === -((gallery.length - 1) * 100)) {
       setTranslationX(0);
       setPreviousIndex(activeIndex)
       setActiveIndex(0);
@@ -46,17 +51,29 @@ const GalleryPreview = () => {
     setActiveIndex(index);
   };
 
-  useEffect(() => {
-    console.log(activeIndex, miniatures.current.children[activeIndex]);
-    miniatures.current.children[activeIndex].style.opacity = 1
-    if (previousIndex === null) return
-    else miniatures.current.children[previousIndex].style.opacity = 0.3
+useEffect(() => {
+    Axios.get(`/gallery/${id}`)
+      .then(res => {
+        setGallery(res.data);
+        setLoading(false);
+      })
+      .catch(err => console.log(err));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+useEffect(() => {
+    if (!loading) {
+      miniatures.current.children[activeIndex].style.opacity = 1
+      if (previousIndex === null) return
+      else miniatures.current.children[previousIndex].style.opacity = 0.3
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeIndex]);
 
   return (
     <div className="previewContainer">
       <div className="previewContainer__slider">
-        {galleries.gallery1.images.map(({ index, src }) => (
+        {gallery.map((src, index) => (
           <img
             key={index}
             src={src}
@@ -79,7 +96,7 @@ const GalleryPreview = () => {
         </button>
       </div>
       <div className="previewContainer__miniatures" ref={miniatures}>
-        {galleries.gallery1.images.map(({ index, src }) => (
+        {gallery.map((src, index) => (
           <img
             key={index}
             src={src}
@@ -89,7 +106,7 @@ const GalleryPreview = () => {
           />
         ))}
       </div>
-      <Link to="/gallery">
+      <Link to="/gallery/page/0">
         <Close className="previewContainer__close__icon" />
       </Link>
     </div>
