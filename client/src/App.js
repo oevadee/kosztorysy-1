@@ -27,11 +27,11 @@ function App() {
             <Navbar />
             <Offer />
           </Route>
-          <Route exact path="/gallery">
+          <Route exact path="/gallery/page/:page" >
             <Navbar />
             <Gallery />
           </Route>
-          <Route exact path="/gallery/preview">
+          <Route exact path="/gallery/preview/:id">
             <GalleryPreview />
           </Route>
           <Route exact path="/contact">

@@ -19,7 +19,7 @@ const Home = () => {
         </p>
         <img className="introContainer__image" src="/img/intro.jpg" alt="" />
         <div className="introContainer__imageCover"></div>
-        <Link to="/gallery">
+        <Link to="/gallery/page/0">
           <Button text="Zobacz projekty" type="primary" />
         </Link>
       </div>

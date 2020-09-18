@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import "./styles/Card.scss";
 
-const Card = ({ title, header, description, imageHeight, imageWidth, descriptionWidth = '100%', src }) => {
+const Card = ({ id, title, header, description, imageHeight, imageWidth, descriptionWidth = '100%', src }) => {
   return (
     <div className="card">
-      <Link to="/gallery/preview">
+      <Link to={`/gallery/preview/${id}`}>
         <img
           src={src}
           alt=""

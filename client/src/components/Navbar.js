@@ -20,7 +20,7 @@ const Navbar = ({ imageType = '/img/logo-dark.png', textColor = '#333' }) => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/gallery" activeClassName="navbar__nav__item--active" className="navbar__nav__item" style={{color: textColor}}>
+          <NavLink to="/gallery/page/0" activeClassName="navbar__nav__item--active" className="navbar__nav__item" style={{color: textColor}}>
             Projekty
           </NavLink>
         </li>
