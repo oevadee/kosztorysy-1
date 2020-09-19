@@ -18,7 +18,7 @@
         "title": "Design",
         "header": "Wyliczenia",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue.",
-        "thumbnail": "/img/gallery2/gallery2_2.jpg",
+        "thumbnail": "/img/gallery2/gallery2_1.jpg",
         "images": [
             "/img/gallery2/gallery2_1.jpg",
             "/img/gallery2/gallery2_2.jpg",
@@ -78,7 +78,7 @@
         "title": "Design",
         "header": "AlPEPEPIPI",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue.",
-        "thumbnail": "/img/gallery2/gallery2_1.jpg",
+        "thumbnail": "/img/gallery2/gallery2_2.jpg",
         "images": [
             "/img/gallery2/gallery2_2.jpg",
             "/img/gallery2/gallery2_2.jpg",
@@ -92,7 +92,7 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue.",
         "thumbnail": "/img/gallery2/gallery2_3.jpg",
         "images": [
-            "/img/gallery2/gallery2_1.jpg",
+            "/img/gallery2/gallery2_3.jpg",
             "/img/gallery2/gallery2_2.jpg",
             "/img/gallery2/gallery2_3.jpg"
         ]
