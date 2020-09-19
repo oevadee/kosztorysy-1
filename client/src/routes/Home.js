@@ -13,7 +13,6 @@ const Home = () => {
 
   const getPageOffset = () => {
     setPageOffset(window.pageYOffset - 1750);
-    console.log(window.pageYOffset);
   }
 
   useEffect(() => {
@@ -29,9 +28,9 @@ const Home = () => {
           Zatrudniamy i współpracujemy ze specjalistami <br /> z wieloletnim
           doświadczeniem.
         </p>
-        <img className="introContainer__image" src="/img/intro.jpg" alt="" />
+        <img className="introContainer__image" src="/img/gallery2/gallery2_1.jpg" alt="" />
         <div className="introContainer__imageCover"></div>
-        <Link to="/gallery">
+        <Link to="/gallery/page/0">
           <Button text="Zobacz projekty" type="primary" />
         </Link>
       </div>
@@ -45,7 +44,7 @@ const Home = () => {
       </div>
       <div className="parallaxImageContainer">
         <img
-          src="/img/home-calc.jpg"
+          src="/img/gallery3/home-calc.jpg"
           alt="parallaxImage"
           className="parallaxImageContainer__img"
           style={{transform: `translateY(${pageOffset * 0.6}px)`}}
