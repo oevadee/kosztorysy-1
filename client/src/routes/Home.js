@@ -44,7 +44,7 @@ const Home = () => {
       </div>
       <div className="parallaxImageContainer">
         <img
-          src="/img/gallery3/home-calc.jpg"
+          src="/img/home-calc.jpg"
           alt="parallaxImage"
           className="parallaxImageContainer__img"
           style={{transform: `translateY(${pageOffset * 0.6}px)`}}

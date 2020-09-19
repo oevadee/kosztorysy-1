@@ -29,13 +29,13 @@ function App() {
         <Footer />
       </Route>
       {/* Gallery */}
-      <Route exact path="/gallery">
+      <Route exact path="/gallery/page/:page">
         <Navbar />
         <Gallery />
         <Footer />
       </Route>
       {/* Gallery Preview */}
-      <Route exact path="/gallery/preview">
+      <Route exact path="/gallery/preview/:id">
         <GalleryPreview />
       </Route>
       {/* Contact */}
