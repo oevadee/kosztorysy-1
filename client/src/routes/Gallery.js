@@ -10,7 +10,7 @@ import { galleries, galleriesArr } from '../context/imageProvider';
 
 const manageGalleries = () => {
   for (let i = 0; i < galleriesArr.length; i++) {
-    if (galleriesArr[i] % 3) {
+    if (galleriesArr[i] % 3 === 0) {
       console.log(galleriesArr[i]);
     }
   }

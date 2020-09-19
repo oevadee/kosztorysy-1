@@ -1,0 +1,84 @@
+@import '../styles/variables';
+
+.contactContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.contactContainer-left {
+  z-index: 0;
+  position: relative;
+  height: 100%;
+  width: 40%;
+  background: $color-brown;
+  color: $color-white;
+  padding: 200px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.contactContainer__texts__header {
+  font-size: $font-xl;
+  font-family: $font-mont;
+  margin-bottom: 10px;
+}
+
+.contactContainer__texts__description {
+  font-size: $font-s;
+  color: $color-muted-text;
+  margin-bottom: 80px;
+}
+
+.contactContainer__contacts {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20%;
+}
+
+.contactContainer__contacts__section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.contactContainer-icon {
+  width: 35px !important;
+  height: 35px !important;
+  cursor: pointer;
+}
+
+.contactContainer__contacts__section__text {
+  font-size: $font-s;
+  font-family: $font-mont;
+  font-weight: 500;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.contactContainer__socials {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contactContainer__socials__icon{
+  width: 25px !important;
+  height: 25px !important;
+  cursor: pointer;
+}
+
+.contactContainer-right{
+  width: 60%;
+  height: 100%;
+  padding: 100px 40px 0 40px;
+}

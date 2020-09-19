@@ -18,12 +18,14 @@ const GalleryPreview = () => {
 
   const goLeft = () => {
     if (translationX === 0) {
-      setTranslationX(translationX - (galleries.gallery1.images.length - 1) * 100);
-      setPreviousIndex(activeIndex)
+      setTranslationX(
+        translationX - (galleries.gallery1.images.length - 1) * 100
+      );
+      setPreviousIndex(activeIndex);
       setActiveIndex(galleries.gallery1.images.length - 1);
     } else {
       setTranslationX(translationX + 100);
-      setPreviousIndex(activeIndex)
+      setPreviousIndex(activeIndex);
       setActiveIndex(activeIndex - 1);
     }
   };
@@ -31,26 +33,26 @@ const GalleryPreview = () => {
   const goRight = () => {
     if (translationX === -((galleries.gallery1.images.length - 1) * 100)) {
       setTranslationX(0);
-      setPreviousIndex(activeIndex)
+      setPreviousIndex(activeIndex);
       setActiveIndex(0);
     } else {
       setTranslationX(translationX - 100);
-      setPreviousIndex(activeIndex)
+      setPreviousIndex(activeIndex);
       setActiveIndex(activeIndex + 1);
     }
   };
 
   const goMiniature = (index) => {
     setTranslationX(-(index * 100));
-    setPreviousIndex(activeIndex)
+    setPreviousIndex(activeIndex);
     setActiveIndex(index);
   };
 
   useEffect(() => {
     console.log(activeIndex, miniatures.current.children[activeIndex]);
-    miniatures.current.children[activeIndex].style.opacity = 1
-    if (previousIndex === null) return
-    else miniatures.current.children[previousIndex].style.opacity = 0.3
+    miniatures.current.children[activeIndex].style.opacity = 1;
+    if (previousIndex === null) return;
+    else miniatures.current.children[previousIndex].style.opacity = 0.3;
   }, [activeIndex]);
 
   return (

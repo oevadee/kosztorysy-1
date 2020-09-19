@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/Home.scss";
@@ -6,9 +6,21 @@ import "../styles/Home.scss";
 // Components
 import Button from "../components/Button";
 import IconSection from "../components/IconSection";
-import CheckCalc from '../components/CheckCalc';
+import CheckCalc from "../components/CheckCalc";
 
 const Home = () => {
+  const [pageOffset, setPageOffset] = useState(0);
+
+  const getPageOffset = () => {
+    setPageOffset(window.pageYOffset - 1750);
+    console.log(window.pageYOffset);
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", getPageOffset);
+    return () => window.removeEventListener("scroll", getPageOffset);
+  }, []);
+
   return (
     <>
       <div className="introContainer">
@@ -25,7 +37,7 @@ const Home = () => {
       </div>
       <div className="secondContainer">
         <div className="secondContainer_section">
-          <IconSection iconSectionTitle="Opis sekcji 1" />
+          <IconSection iconType="book" iconSectionTitle="Opis sekcji 1" />
         </div>
         <div className="secondContainer__section">
           <IconSection iconSectionTitle="Opis sekcji 2" />
@@ -36,6 +48,7 @@ const Home = () => {
           src="/img/home-calc.jpg"
           alt="parallaxImage"
           className="parallaxImageContainer__img"
+          style={{transform: `translateY(${pageOffset * 0.6}px)`}}
         />
         <div className="parallaxImageContainer__cover" />
       </div>

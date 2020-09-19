@@ -28,6 +28,7 @@
 .footer__privacy{
   flex: 1;
   text-align: center;
+  cursor: pointer;
 }
 
 .footer__socials{
@@ -41,4 +42,6 @@
   width: 25px;
   height: 25px;
   margin: 0 20px;
+  color: $color-white;
+  cursor: pointer;
 }

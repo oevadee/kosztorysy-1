@@ -9,22 +9,38 @@
   border-radius: $b-radius;
   box-shadow: 2px 2px 2px 0 rgba($color: #333, $alpha: 0.25);
   outline: none;
+  transition: $transision-snap;
+  cursor: pointer;
+    &:active{
+      transform: translateY(1px);
+    }
 }
 
 .btn-primary{
-  background: $color-white;
-  border: none;
-  color: $color-black;
+  background: none;
+  border: 3px solid $color-white;
+  color: $color-white;
+    &:hover{
+      background: $color-white;
+      color: $color-black;
+    }
 }
 
 .btn-secondary{
   background: none;
   border: 3px solid $color-brown;
   color: $color-brown;
+    &:hover{
+      background: $color-brown;
+      color: $color-white;
+    }
 }
 
 .btn-secondary-full{
   background: $color-brown;
   border: none;
   color: $color-white;
+    &:hover{
+      background: $color-brown-light;
+    }
 }
