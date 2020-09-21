@@ -47,10 +47,10 @@ const Form = () => {
         setErr(<></>);
       }, 3000);
 
-    axios
-      .post("/sendForm", values)
-      .then((res) => console.log("success"))
-      .catch((err) => console.log(err));
+      axios
+        .post("/sendForm", values)
+        .then((res) => console.log("success"))
+        .catch((err) => console.log(err));
     }
   };
 
@@ -61,7 +61,7 @@ const Form = () => {
           firstName: "",
           lastName: "",
           email: "",
-          file: null,
+          file: "",
           message: "",
         }}
         onSubmit={handleSubmit}
@@ -131,9 +131,10 @@ const Form = () => {
                     name="file"
                     type="file"
                     style={{ display: "none" }}
-                    onChange={(e) =>
-                      formProps.setFieldValue("file", e.target.files[0])
-                    }
+                    onChange={(e) => {
+                      console.log(e.target.files[0]);
+                      formProps.setFieldValue("file", e.target.files[0]);
+                    }}
                   />
                   <p>Dodaj plik</p>
                 </label>

@@ -12,7 +12,7 @@
   transition: $transision-snap;
   cursor: pointer;
     &:active{
-      transform: translateY(3px);
+      transform: translateY(2px);
     }
 }
 

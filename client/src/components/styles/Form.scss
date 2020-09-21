@@ -62,9 +62,10 @@
   align-items: center;
   justify-content: center;
   height: 20px;
-  transform: translateY(-20px);
+  transform: translateY(-15px);
   font-size: $font-xs;
+  transition: $transision-snap;
    &:active{
-     transform: translateY(-17px);
+     transform: translateY(-13px);
    }
 }
