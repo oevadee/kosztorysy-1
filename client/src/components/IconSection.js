@@ -25,11 +25,11 @@ const IconSection = ({ iconSectionTitle, iconType }) => {
       <h2 className="iconSection__header">{iconSectionTitle}</h2>
        <ul className="iconSection__list">
         {iconType === 'book' ? bookItems.map(book => (
-          <li className="iconSection__list__item">
+          <li key={book} className="iconSection__list__item">
             {book}
           </li>
         )) : buildItems.map(build => (
-          <li className="iconSection__list__item">
+          <li key={build} className="iconSection__list__item">
             {build}
           </li>
         ))}

@@ -31,17 +31,18 @@
   font-size: $font-s;
   font-weight: 500;
   text-decoration: none;
+  padding-bottom: 2px;
 }
 
 .navbar__nav__item--active{
   font-weight: 600;
-  border-bottom: 2px solid $color-brown;
+  border-bottom: 3px solid $color-brown;
 }
 
 .navbar__nav__item::after {
   content: "";
   position: relative;
-  top: -3px;
+  top: -1px;
   left: 0;
   background: $color-brown;
   display: block;

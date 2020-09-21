@@ -12,13 +12,23 @@ const Form = () => {
 
   const [err, setErr] = useState(<></>);
 
-  const label1 = useRef();
+  const firstName = useRef(null);
+  const lastName = useRef(null);
+  const email = useRef(null);
+  const message = useRef(null);
 
-  const handleChange = (values) => {
-    values.target.value !== ""
-      ? (label1.current.className =
-          "formContainer__form__row__field__label-active")
-      : (label1.current.className = "formContainer__form__row__field__label");
+  const refsArr = [firstName, lastName, email, message];
+
+  const handleChange = (e) => {
+    console.log(e.target.name);
+    refsArr.forEach((ref) => {
+      if (e.target.name === ref.current.htmlFor) {
+        e.target.value !== ""
+          ? (ref.current.className =
+              "formContainer__form__row__field__label-active")
+          : (ref.current.className = "formContainer__form__row__field__label");
+      }
+    });
   };
 
   const handleSubmit = (values) => {
@@ -37,10 +47,10 @@ const Form = () => {
         setErr(<></>);
       }, 3000);
 
-      axios
-        .post("/sendForm", values)
-        .then((res) => console.log("success"))
-        .catch((err) => console.log(err));
+    axios
+      .post("/sendForm", values)
+      .then((res) => console.log("success"))
+      .catch((err) => console.log(err));
     }
   };
 
@@ -51,7 +61,7 @@ const Form = () => {
           firstName: "",
           lastName: "",
           email: "",
-          file: "",
+          file: null,
           message: "",
         }}
         onSubmit={handleSubmit}
@@ -65,13 +75,14 @@ const Form = () => {
               <div className="formContainer__form__row__field">
                 <Field
                   className="formContainer__form__row__field__input"
-                  name={"firstName"}
+                  name="firstName"
                   type="text"
                   value={formProps.values.name}
-                  onChange={handleChange}
+                  onKeyUp={handleChange}
                 />
                 <label
-                  ref={label1}
+                  htmlFor="firstName"
+                  ref={firstName}
                   className="formContainer__form__row__field__label"
                 >
                   Imię
@@ -81,10 +92,16 @@ const Form = () => {
               <div className="formContainer__form__row__field">
                 <Field
                   className="formContainer__form__row__field__input"
-                  name={"lastName"}
+                  name="lastName"
                   type="text"
+                  value={formProps.values.name}
+                  onKeyUp={handleChange}
                 />
-                <label className="formContainer__form__row__field__label">
+                <label
+                  htmlFor="lastName"
+                  ref={lastName}
+                  className="formContainer__form__row__field__label"
+                >
                   Nazwisko
                 </label>
               </div>
@@ -94,10 +111,16 @@ const Form = () => {
               <div className="formContainer__form__row__field">
                 <Field
                   className="formContainer__form__row__field__input"
-                  name={"email"}
+                  name="email"
                   type="text"
+                  value={formProps.values.name}
+                  onKeyUp={handleChange}
                 />
-                <label className="formContainer__form__row__field__label">
+                <label
+                  htmlFor="email"
+                  ref={email}
+                  className="formContainer__form__row__field__label"
+                >
                   Adres email
                 </label>
               </div>
@@ -105,16 +128,14 @@ const Form = () => {
               <div className="formContainer__form__row__field">
                 <label className="formContainer__form__row__field__fileLabel">
                   <input
+                    name="file"
+                    type="file"
+                    style={{ display: "none" }}
                     onChange={(e) =>
                       formProps.setFieldValue("file", e.target.files[0])
                     }
-                    name={"file"}
-                    type="file"
-                    style={{ display: "none" }}
                   />
-                  <a>
-                    Dodaj plik
-                  </a>
+                  <p>Dodaj plik</p>
                 </label>
               </div>
             </div>
@@ -123,10 +144,16 @@ const Form = () => {
               <div className="formContainer__form__row__field">
                 <Field
                   className="formContainer__form__row__field__input"
-                  name={"message"}
+                  name="message"
                   type="text"
+                  value={formProps.values.name}
+                  onKeyUp={handleChange}
                 />
-                <label className="formContainer__form__row__field__label">
+                <label
+                  htmlFor="message"
+                  ref={message}
+                  className="formContainer__form__row__field__label"
+                >
                   Wiadomość
                 </label>
               </div>
