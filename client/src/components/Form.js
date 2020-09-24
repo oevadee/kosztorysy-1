@@ -11,6 +11,7 @@ const Form = () => {
   const emailPattern = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   const [err, setErr] = useState(<></>);
+  const [file, setFile] = useState(undefined);
 
   const firstName = useRef(null);
   const lastName = useRef(null);
@@ -20,7 +21,6 @@ const Form = () => {
   const refsArr = [firstName, lastName, email, message];
 
   const handleChange = (e) => {
-    console.log(e.target.name);
     refsArr.forEach((ref) => {
       if (e.target.name === ref.current.htmlFor) {
         e.target.value !== ""
@@ -32,9 +32,9 @@ const Form = () => {
   };
 
   const handleSubmit = (values) => {
-    console.log(values);
+    console.log(file);
     if (values.firstName.length <= 2) {
-      setErr(<Alert text="Imię jest za krótkie" />);
+      setErr(<Alert text="Imię jest za krótkie" />)
     } else if (values.lastName.length <= 2) {
       setErr(<Alert text="Nazwisko jest za krótkie" />);
     } else if (!values.email.toLowerCase().match(emailPattern)) {
@@ -44,14 +44,25 @@ const Form = () => {
     } else {
       setErr(<Alert text="Wysłano!" />);
       setTimeout(() => {
-        setErr(<></>);
+        setErr(<></>)
       }, 3000);
-
-      axios
-        .post("/sendForm", values)
-        .then((res) => console.log("success"))
-        .catch((err) => console.log(err));
     }
+    console.log(values);
+
+    let formData = new FormData();
+    formData.append("firstName", values.firstName);
+    formData.append("lastName", values.lastName);
+    formData.append("email", values.email);
+    formData.append("file", values.file);
+    formData.append("message", values.message);
+
+    axios
+      .post("/sendForm", formData, {
+        headers: new Headers({ Accept: 'application/json' })
+      })
+      .then((res) => console.log("success", res.data))
+      .catch((err) => console.log(err));
+    // }
   };
 
   return (
@@ -68,6 +79,7 @@ const Form = () => {
       >
         {(formProps) => (
           <form
+            encType="multipart/form-data"
             className="formContainer__form"
             onSubmit={formProps.handleSubmit}
           >
@@ -126,17 +138,17 @@ const Form = () => {
               </div>
 
               <div className="formContainer__form__row__field">
-                <label className="formContainer__form__row__field__fileLabel">
+                <label className={file ? "formContainer__form__row__field__fileLabel-full" : "formContainer__form__row__field__fileLabel"}>
                   <input
-                    name="file"
+                    name="formFile"
                     type="file"
                     style={{ display: "none" }}
                     onChange={(e) => {
-                      console.log(e.target.files[0]);
+                      setFile(e.target.files[0]);
                       formProps.setFieldValue("file", e.target.files[0]);
                     }}
                   />
-                  <p>Dodaj plik</p>
+                  <p>{file ? 'Plik dodany' : 'Dodaj plik'}</p>
                 </label>
               </div>
             </div>

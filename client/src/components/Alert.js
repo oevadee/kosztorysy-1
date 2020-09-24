@@ -1,5 +1,11 @@
 import React from 'react'
 
-const Alert = ({ text }) => (<h3>{text}</h3>)
+const Alert = ({text}) => {
+  return (
+    <h3>
+      {text}
+    </h3>
+  )
+}
 
-export default Alert;
+export default Alert

@@ -22,7 +22,7 @@
   display: flex;
 }
 
-.formContainer__form__row__field{
+.formContainer__form__row__field {
   flex: 1;
   padding: 0 10px;
   display: flex;
@@ -37,7 +37,7 @@
   pointer-events: none;
 }
 
-.formContainer__form__row__field__label-active{
+.formContainer__form__row__field__label-active {
   @extend .formContainer__form__row__field__label;
   transform: translateY(-50px);
 }
@@ -49,13 +49,13 @@
   width: 100%;
   font-size: $font-s;
 
-  &:focus + label{
+  &:focus+label {
     font-size: $font-xs;
     transform: translateY(-50px);
   }
 }
 
-.formContainer__form__row__field__fileLabel{
+.formContainer__form__row__field__fileLabel {
   @extend .btn;
   @extend .btn-secondary;
   display: flex;
@@ -65,7 +65,14 @@
   transform: translateY(-15px);
   font-size: $font-xs;
   transition: $transision-snap;
-   &:active{
-     transform: translateY(-13px);
-   }
+
+  &:active {
+    transform: translateY(-13px);
+  }
+}
+
+.formContainer__form__row__field__fileLabel-full {
+  @extend .btn-secondary-full;
+  @extend .formContainer__form__row__field__fileLabel;
+  height: 20px;
 }
