@@ -8,7 +8,6 @@ import ArrowForward from "@material-ui/icons/ArrowForwardIosOutlined";
 import ArrowBack from "@material-ui/icons/ArrowBackIosOutlined";
 import Close from "@material-ui/icons/CloseOutlined";
 
-
 const GalleryPreview = () => {
   const [translationX, setTranslationX] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -24,7 +23,7 @@ const GalleryPreview = () => {
   const goLeft = () => {
     if (translationX === 0) {
       setTranslationX(translationX - (gallery.length - 1) * 100);
-      setPreviousIndex(activeIndex)
+      setPreviousIndex(activeIndex);
       setActiveIndex(gallery.length - 1);
     } else {
       setTranslationX(translationX + 100);
@@ -51,21 +50,21 @@ const GalleryPreview = () => {
     setActiveIndex(index);
   };
 
-useEffect(() => {
+  useEffect(() => {
     Axios.get(`/gallery/${id}`)
-      .then(res => {
+      .then((res) => {
         setGallery(res.data);
         setLoading(false);
       })
-      .catch(err => console.log(err));
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+      .catch((err) => console.log(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-useEffect(() => {
+  useEffect(() => {
     if (!loading) {
-      miniatures.current.children[activeIndex].style.opacity = 1
-      if (previousIndex === null) return
-      else miniatures.current.children[previousIndex].style.opacity = 0.3
+      miniatures.current.children[activeIndex].style.opacity = 1;
+      if (previousIndex === null) return;
+      else miniatures.current.children[previousIndex].style.opacity = 0.3;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeIndex]);

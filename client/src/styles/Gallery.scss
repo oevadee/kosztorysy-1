@@ -1,6 +1,6 @@
 @import './variables';
 
-.galleryContainer{
+.galleryContainer {
   width: 100%;
   height: 900px;
   display: flex;
@@ -8,22 +8,28 @@
   margin-top: 100px;
 }
 
-.gallerySection{
-  height: calc(100vh - 100px);
+.gallerySection {
   width: 800px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50px);
 }
 
-.gallerySection__right{
+.gallerySection__right {
   transform: translate(50px, 50px);
-  height: calc(100% - 50px);
 }
 
-.gallerySection__header{
+.gallerySection__header {
   font-family: $font-mont;
   font-size: $font-l;
   font-weight: 500;
   color: $color-black;
   margin-bottom: 80px;
+}
+
+.gallerySection__buttons {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }

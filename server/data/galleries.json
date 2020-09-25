@@ -8,9 +8,7 @@
     "images": [
       "/img/gallery1/gallery1_1.jpg",
       "/img/gallery1/gallery1_2.jpg",
-      "/img/gallery1/gallery1_3.jpg",
-      "/img/gallery1/gallery1_4.jpg",
-      "/img/gallery1/gallery1_5.jpg"
+      "/img/gallery1/gallery1_3.jpg"
     ]
   },
   {
@@ -30,23 +28,23 @@
     "title": "Design",
     "header": "Rozliczenia",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue.",
-    "thumbnail": "/img/gallery1/gallery1_1.jpg",
+    "thumbnail": "/img/gallery3/gallery3_1.jpg",
     "images": [
-      "/img/gallery1/gallery1_1.jpg",
-      "/img/gallery2/gallery2_2.jpg",
-      "/img/gallery1/gallery1_3.jpg"
+      "/img/gallery3/gallery3_1.jpg",
+      "/img/gallery3/gallery3_2.jpg",
+      "/img/gallery3/gallery3_3.jpg"
     ]
   },
   {
     "id": 3,
     "title": "Design",
     "header": "Obliczenia",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue.",
-    "thumbnail": "/img/gallery2/gallery2_2.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue a rutrum vestibulum, ligula turpis dignissim risus, in mollis libero ex ac sapien.",
+    "thumbnail": "/img/gallery4/gallery4_1.jpg",
     "images": [
-      "/img/gallery2/gallery2_2.jpg",
-      "/img/gallery1/gallery1_4.jpg",
-      "/img/gallery1/gallery1_5.jpg"
+      "/img/gallery4/gallery4_1.jpg",
+      "/img/gallery4/gallery4_2.jpg",
+      "/img/gallery4/gallery4_3.jpg"
     ]
   },
   {
@@ -54,11 +52,11 @@
     "title": "Design",
     "header": "Zaliczenia",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue.",
-    "thumbnail": "/img/gallery2/gallery2_1.jpg",
+    "thumbnail": "/img/gallery5/gallery5_1.jpg",
     "images": [
-      "/img/gallery2/gallery2_1.jpg",
-      "/img/gallery2/gallery2_2.jpg",
-      "/img/gallery2/gallery2_3.jpg"
+      "/img/gallery5/gallery5_1.jpg",
+      "/img/gallery5/gallery5_2.jpg",
+      "/img/gallery5/gallery5_3.jpg"
     ]
   },
   {
@@ -66,23 +64,23 @@
     "title": "Design",
     "header": "AleleLOL",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue.",
-    "thumbnail": "/img/gallery2/gallery2_1.jpg",
+    "thumbnail": "/img/gallery6/gallery6_1.jpg",
     "images": [
-      "/img/gallery2/gallery2_1.jpg",
-      "/img/gallery2/gallery2_2.jpg",
-      "/img/gallery2/gallery2_3.jpg"
+      "/img/gallery6/gallery6_1.jpg",
+      "/img/gallery6/gallery6_2.jpg",
+      "/img/gallery6/gallery6_3.jpg"
     ]
   },
   {
     "id": 6,
     "title": "Design",
     "header": "AlPEPEPIPI",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue.",
-    "thumbnail": "/img/gallery2/gallery2_2.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue a rutrum vestibulum, ligula turpis dignissim risus, in mollis libero ex ac sapien.",
+    "thumbnail": "/img/gallery7/gallery7_1.jpg",
     "images": [
-      "/img/gallery2/gallery2_2.jpg",
-      "/img/gallery2/gallery2_2.jpg",
-      "/img/gallery2/gallery2_3.jpg"
+      "/img/gallery7/gallery7_1.jpg",
+      "/img/gallery7/gallery7_2.jpg",
+      "/img/gallery7/gallery7_3.jpg"
     ]
   },
   {
@@ -90,11 +88,11 @@
     "title": "Design",
     "header": "AlPRORO{KE#",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue.",
-    "thumbnail": "/img/gallery2/gallery2_3.jpg",
+    "thumbnail": "/img/gallery8/gallery8_1.jpg",
     "images": [
-      "/img/gallery2/gallery2_3.jpg",
-      "/img/gallery2/gallery2_2.jpg",
-      "/img/gallery2/gallery2_3.jpg"
+      "/img/gallery8/gallery8_1.jpg",
+      "/img/gallery8/gallery8_2.jpg",
+      "/img/gallery8/gallery8_3.jpg"
     ]
   },
   {
@@ -102,11 +100,11 @@
     "title": "Design",
     "header": "AlPRORO{KE#",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis, augue.",
-    "thumbnail": "/img/gallery1/gallery1_3.jpg",
+    "thumbnail": "/img/gallery9/gallery9_1.jpg",
     "images": [
-      "/img/gallery2/gallery2_1.jpg",
-      "/img/gallery2/gallery2_2.jpg",
-      "/img/gallery2/gallery2_3.jpg"
+      "/img/gallery9/gallery9_1.jpg",
+      "/img/gallery9/gallery9_2.jpg",
+      "/img/gallery9/gallery9_3.jpg"
     ]
   }
 ]

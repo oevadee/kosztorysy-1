@@ -43,18 +43,18 @@ const Gallery = () => {
         </Link>
       );
     } else {
-      return <></>;
+      return <Button text="dalej" type="secondary-muted" />;
     }
   };
   const getPreviousButton = (page) => {
     if (page !== 0) {
       return (
         <Link to={`${page - 1}`}>
-          <Button text="wruć" type="secondary-full" />
+          <Button text="powrót" type="secondary-full" />
         </Link>
       );
     } else {
-      return <></>;
+      return <Button text="powrót" type="secondary-full-muted" />;
     }
   };
 
@@ -77,8 +77,10 @@ const Gallery = () => {
                 src={el.thumbnail}
               />
             ))}
-          {getNextButton()}
-          {getPreviousButton(parseInt(page))}
+          <div className="gallerySection__buttons">
+            {getPreviousButton(parseInt(page))}
+            {getNextButton()}
+          </div>
         </div>
         <div className="gallerySection__right">
           {getRightSection()

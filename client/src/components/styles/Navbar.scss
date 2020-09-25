@@ -1,6 +1,6 @@
 @import '../../styles/variables';
 
-.navbar{
+.navbar {
   z-index: 420;
   position: absolute;
   top: 0;
@@ -13,11 +13,11 @@
   padding: 0 40px;
 }
 
-.navbar__img{
+.navbar__img {
   height: 100px;
 }
 
-.navbar__nav{
+.navbar__nav {
   height: 100%;
   width: 550px;
   display: flex;
@@ -26,7 +26,7 @@
   list-style: none;
 }
 
-.navbar__nav__item{
+.navbar__nav__item {
   font-family: $font-mont;
   font-size: $font-s;
   font-weight: 500;
@@ -34,9 +34,9 @@
   padding-bottom: 2px;
 }
 
-.navbar__nav__item--active{
+.navbar__nav__item--active {
   font-weight: 600;
-  border-bottom: 2px solid $color-brown;
+  border-bottom: 3px solid $color-brown;
 }
 
 .navbar__nav__item::after {

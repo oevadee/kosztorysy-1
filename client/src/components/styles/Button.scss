@@ -36,6 +36,14 @@
     }
 }
 
+.btn-secondary-muted{
+  background: none;
+  border: 3px solid $color-muted-text;
+  color: $color-muted-text;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
 .btn-secondary-full{
   background: $color-brown;
   border: 3px solid $color-brown;
@@ -43,4 +51,12 @@
     &:hover{
       background: $color-brown-light;
     }
+}
+
+.btn-secondary-full-muted{
+  background: $color-muted-text;
+  border: 3px solid $color-muted-text;
+  color: $color-white;
+  pointer-events: none;
+  opacity: 0.1;
 }
