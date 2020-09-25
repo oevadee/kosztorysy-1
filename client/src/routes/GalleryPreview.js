@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import "../styles/GalleryPreview.scss";
 import Axios from "axios";
 
+import useKeyPress from '../hooks/useKeyPress';
+
 // Icons
 import ArrowForward from "@material-ui/icons/ArrowForwardIosOutlined";
 import ArrowBack from "@material-ui/icons/ArrowBackIosOutlined";
@@ -17,6 +19,10 @@ const GalleryPreview = () => {
   const [loading, setLoading] = useState(true);
 
   const miniatures = useRef(null);
+
+  // const leftPress = useKeyPress('ArrowLeft');
+  // const rightPress = useKeyPress('ArrowRight');
+  // const leftPress = useKeyPress('ArrowLeft');
 
   //galleries.gallery1.images
 
@@ -49,6 +55,17 @@ const GalleryPreview = () => {
     setPreviousIndex(activeIndex);
     setActiveIndex(index);
   };
+
+  const handleKeyPress = (e) => {
+    e.preventDefault();
+  };
+
+  useEffect(() => {
+    document.addEventListener("keyPress", handleKeyPress);
+    return () => {
+      document.removeEventListener("keyPress", handleKeyPress);
+    };
+  });
 
   useEffect(() => {
     Axios.get(`/gallery/${id}`)
