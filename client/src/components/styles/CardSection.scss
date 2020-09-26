@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+
+.cardSection{
+  width: 900px;
+  height: 490px;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardSection__buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardSection__card{
+  width: 700px;
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background: $color-brown;
+  border-radius: $b-radius;
+  text-align: center;
+  color: $color-white;
+}
+
+.cardSection__card__header{
+  font-family: $font-mont;
+  font-size: $font-s;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.cardSection__card__list{
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: $font-xs;
+  color: $color-muted-text-light;
+  list-style: none;
+}

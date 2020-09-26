@@ -2,7 +2,7 @@ import React from 'react'
 
 import './styles/Button.scss';
 
-const Button = ({ text, type, submit = '', onClick }) => {
+const Button = ({ text = 'text', type = 'secondary-full', submit = '', onClick }) => {
   if (type === 'primary') return <button onClick={onClick} className="btn btn-primary">{text}</button>
 
   else if (type === 'secondary') return <button onClick={onClick} className="btn btn-secondary">{text}</button>
