@@ -36,7 +36,7 @@
 
 .navbar__nav__item--active {
   font-weight: 600;
-  border-bottom: 3px solid $color-brown;
+  color: $color-brown !important;
 }
 
 .navbar__nav__item::after {

@@ -33,21 +33,27 @@ const Contact = () => {
           </div>
         </div>
         <div className="contactContainer__socials">
-          <img
-            src="/icons/facebook.svg"
-            alt="facebook"
-            className="contactContainer__socials__icon"
-          />
-          <img
-            src="/icons/instagram.svg"
-            alt="instagram"
-            className="contactContainer__socials__icon"
-          />
-          <img
-            src="/icons/twitter.svg"
-            alt="twitter"
-            className="contactContainer__socials__icon"
-          />
+          <a href="https://www.facebook.com/">
+            <img
+              src="/icons/facebook.svg"
+              alt="facebook"
+              className="contactContainer__socials__icon"
+            />
+          </a>
+          <a href="https://www.instagram.com/">
+            <img
+              src="/icons/instagram.svg"
+              alt="instagram"
+              className="contactContainer__socials__icon"
+            />
+          </a>
+          <a href="https://twitter.com/">
+            <img
+              src="/icons/twitter.svg"
+              alt="twitter"
+              className="contactContainer__socials__icon"
+            />
+          </a>
         </div>
       </div>
       <div className="contactContainer-right">

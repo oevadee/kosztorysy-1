@@ -1,0 +1,45 @@
+@import '../../styles/variables';
+
+.table {
+  margin: 30px 0 60px;
+  width: 1120px;
+  border: solid 5px $color-black;
+  border-radius: $b-radius;
+  overflow: hidden;
+  border-spacing: 0;
+}
+
+.table__row {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.table__row__title,
+.table__row__price {
+  border: 1px solid $color-black;
+  padding: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.table__row__title h1,
+.table__row__price h1 {
+  font-family: $font-mont;
+  font-size: $font-m;
+  font-weight: 500;
+}
+
+.table__row__title {
+  flex: 2;
+  font-family: $font-lato;
+  font-size: font-s;
+  font-weight: 400;
+}
+
+.table__row__price {
+  flex: 1;
+  font-size: font-l;
+  font-weight: 600;
+}

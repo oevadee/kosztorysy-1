@@ -1,4 +1,5 @@
 import React from "react";
+import './styles/Table.scss';
 
 const tableData = [
   [
@@ -25,19 +26,19 @@ const tableData = [
 
 const Table = () => {
   return (
-    <div className="offerContainer__table">
-      <div className="offerContainer__table__row">
-        <div className="offerContainer__table__row__title">
+    <div className="table">
+      <div className="table__row">
+        <div className="table__row__title">
           <h1>Rodzaj usługi</h1>
         </div>
-        <div className="offerContainer__table__row__price">
+        <div className="table__row__price">
           <h1>Cena za pozycję*</h1>
         </div>
       </div>
       {tableData.map((data) => (
-        <div className="offerContainer__table__row">
-          <div className="offerContainer__table__row__title">{data[0]}</div>
-          <div className="offerContainer__table__row__price">{data[1]}</div>
+        <div key={data} className="table__row">
+          <div className="table__row__title">{data[0]}</div>
+          <div className="table__row__price">{data[1]}</div>
         </div>
       ))}
     </div>
