@@ -67,6 +67,7 @@ const Form = () => {
 
   return (
     <div className="formContainer">
+      {err}
       <Formik
         initialValues={{
           firstName: "",
@@ -180,7 +181,6 @@ const Form = () => {
           </form>
         )}
       </Formik>
-      {err}
     </div>
   );
 };

@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.alert{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #c4302b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  border-radius: $b-radius;
+}

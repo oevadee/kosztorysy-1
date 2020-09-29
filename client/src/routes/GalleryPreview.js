@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import "../styles/GalleryPreview.scss";
 import Axios from "axios";
 
-import useKeyPress from '../hooks/useKeyPress';
+// import useKeyPress from "../hooks/useKeyPress";
 
 // Icons
 import ArrowForward from "@material-ui/icons/ArrowForwardIosOutlined";
@@ -20,9 +20,8 @@ const GalleryPreview = () => {
 
   const miniatures = useRef(null);
 
-  // const leftPress = useKeyPress('ArrowLeft');
-  // const rightPress = useKeyPress('ArrowRight');
-  // const leftPress = useKeyPress('ArrowLeft');
+  // const leftPress = useKeyPress("ArrowLeft");
+  // const rightPress = useKeyPress("ArrowRight");
 
   //galleries.gallery1.images
 
@@ -56,24 +55,25 @@ const GalleryPreview = () => {
     setActiveIndex(index);
   };
 
-  const handleKeyPress = (e) => {
-    e.preventDefault();
+  const handleKeyPress = ({ key }) => {
+    console.log(key);
   };
 
   useEffect(() => {
-    document.addEventListener("keyPress", handleKeyPress);
+    document.addEventListener("keydown", handleKeyPress);
     return () => {
-      document.removeEventListener("keyPress", handleKeyPress);
+      document.removeEventListener("keydown", handleKeyPress);
     };
   });
 
   useEffect(() => {
     Axios.get(`/gallery/${id}`)
-      .then((res) => {
-        setGallery(res.data);
-        setLoading(false);
-      })
-      .catch((err) => console.log(err));
+    .then((res) => {
+      setGallery(res.data);
+      console.log(res.data);
+      setLoading(false);
+    })
+    .catch((err) => console.log(err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -118,6 +118,7 @@ const GalleryPreview = () => {
             src={src}
             alt=""
             className="previewContainer__miniatures__miniature"
+            style={index === 0 ? {opacity: 1} : {opacity: 0.3}}
             onClick={() => goMiniature(index)}
           />
         ))}
